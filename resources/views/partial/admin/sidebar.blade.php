@@ -6,7 +6,7 @@
         </div>
         <div class="p-2 items-center justify-between flex flex-row-reverse">
             <div class="flex items-center">
-                <img src="" alt="" class="profile-img w-11 h-11 rounded-full">
+                <img src="https://avatars.githubusercontent.com/u/43324519?v=4" alt="" class="profile-img w-11 h-11 rounded-full">
                 <div class="capitalize text-xl font-bold ml-2">
                     maz develop
                 </div>
