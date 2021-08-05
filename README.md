@@ -1,5 +1,5 @@
 <p align="center">
-<img src="sky-sports.png" width="400">
+<img src="./art/sky-sports.png" width="400">
 </p>
 
 ## About mTube
