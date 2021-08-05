@@ -37,8 +37,8 @@ class UserUpdateRequest extends FormRequest
                 'name.required'=>'نام و نام خانوادگی  را وارد کنید',
                 'email.email'=>'ایمیل معتبر نمی باشد',
                 'email.required'=>'ایمیل  را وارد کنید',
-                'password.required'=>'رمز عبور باید بیش از 6 کاراکتر باشد',
-                'password.min'=>'رمز عبور را وارد کنید',
+                'password.required'=>'رمز عبور را وارد کنید',
+                'password.min'=>' رمز عبور باید بیش از 6 کاراکتر باشد',
                 'status.required'=>'وضعیت کاربر را وارد کنید',
                 'roles.required'=>'نقش کاربر را انتخاب کنید',
             ];

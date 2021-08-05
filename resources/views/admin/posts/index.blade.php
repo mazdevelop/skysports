@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 	<div class="container">
+        @include('partial.admin.session')
         <table class="table-auto">
             <thead>
                 <tr class="text-xs font-thin text-center text-white rounded-md bg-gray-500 w-full">

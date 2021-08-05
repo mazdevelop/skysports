@@ -1,62 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img src="https://raw.githubusercontent.com/PHPJunior/mtube/master/public/images/logo.png" width="400">
 </p>
 
-## About Laravel
+## About mTube
+mTube is a simple video sharing platform built with Laravel. Create personal channel share videos online with friends and family.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Packages
+- [TusPHP](https://github.com/ankitpokhrel/tus-php)
+- [Laravel Websockets](https://github.com/beyondcode/laravel-websockets)
+- [Laravel Model Settings](https://github.com/cklmercer/laravel-model-settings)
+- [Eloquent Viewable](https://github.com/cyrildewit/eloquent-viewable)
+- [Laravel Vote](https://github.com/jcc/laravel-vote)
+- [Laravel TALL Preset](https://github.com/laravel-frontend-presets/tall)
+- [Livewire Modal](https://github.com/livewire-ui/modal)
+- [Livewire](https://github.com/livewire/livewire)
+- [Laravel Subscribe](https://github.com/overtrue/laravel-subscribe)
+- [Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
+- [Laravel Readable](https://github.com/Pharaonic/laravel-readable)
+- [Laravel Livewire Tables](https://github.com/rappasoft/laravel-livewire-tables)
+- [Active for Laravel](https://github.com/dwightwatson/active)
+- [Laravel Ban](https://github.com/cybercog/laravel-ban)
+- [Laravel Setting](https://github.com/akaunting/laravel-setting)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
+- FFMpeg
+- PHP 7.3/8
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installations
+```
+composer install
+```
 
-## Learning Laravel
+Edit `.env` file and `config/site.php`
+``` 
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT=
+LARAVEL_WEBSOCKETS_SSL_LOCAL_PK=
+LARAVEL_WEBSOCKETS_SSL_PASSPHRASE=
 
-## Laravel Sponsors
+FFMPEG_BINARIES=
+FFPROBE_BINARIES=
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+``` 
+[
+    'converted_file_driver' => 'public',
+    'hls_segment_size' => 10,
+    'frame_from_seconds' => 3
+]
+```
+Start Laravel Websockets Server
 
-### Premium Partners
+```
+php artisan websockets:serve
+php artisan queue:work
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+## Create Admin User
+```
+php artisan create:admin
+```
 
-## Contributing
+## Todo
+- [x] ~~Tus Server/Client~~
+- [x] ~~Channel Management~~
+- [x] ~~Channel Branding~~
+- [x] ~~Un/Subscribe Channel~~
+- [x] ~~Realtime Un/Subscribe View~~
+- [x] ~~Video Management~~
+- [x] ~~Transcode Video~~
+- [x] ~~Dis/Like Video~~
+- [x] ~~Video View Count~~
+- [x] ~~Video Comments~~
+- [x] ~~Video Thumbnails~~
+- [x] ~~Video Settings~~
+- [ ] Video Playlists
+- [ ] Video Player - Google IMA Pre Roll Plugin
+- [x] ~~Realtime Notifications ( Dis/Like, Un/Subscribe Channel, Comments )~~
+- [ ] Admin Panel
+- [ ] Companion - Uppy Standalone Server
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Credits
+- All Contributors
 
 ## License
+The MIT License [MIT license](https://opensource.org/licenses/MIT). Please see License File for more information.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Screenshots
+![screenshot 1](art/1.png)
+![screenshot 2](art/2.png)
+![screenshot 3](art/3.png)
+![screenshot 4](art/4.png)
+![screenshot 5](art/5.png)
+![screenshot 6](art/6.png)
+![screenshot 7](art/7.png)
+![screenshot 8](art/8.png)
