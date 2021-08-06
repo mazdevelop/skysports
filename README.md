@@ -2,7 +2,7 @@
 <img src="./art/sky-sports.png" width="400">
 </p>
 
-## About mTube
+## About SkySports
 Sky Sports is a group of British subscription television sports channels operated by the satellite pay-TV company Sky, a division of Comcast.We redesigned this site with the help of Laravel and Tailwind.
 
 ## Packages
@@ -18,7 +18,7 @@ Sky Sports is a group of British subscription television sports channels operate
 - [x] ~~Create Panel Admin By Tailwind~~
 - [x] ~~CRUD User~~
 - [x] ~~CRUD Post~~
-- [ ] Dropzone.jsfor file
+- [ ] Dropzone.js for file
 
 
 ## Credits
