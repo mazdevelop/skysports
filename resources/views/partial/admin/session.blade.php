@@ -26,3 +26,10 @@
         </div>
     </div>
 @endif
+@if (Session::has('update_post'))
+    <div class="grid place-content-center h-14">
+        <div class="text-center text-green-500">
+            {{session('update_post')}}
+        </div>
+    </div>
+@endif

@@ -17,11 +17,11 @@
             <tbody class="container">
                 @foreach ($users as $user)
                     <tr class="px-4 hover:text-blue-600 cursor-pointer transition-colors duration-500 ease-in-out">
-                            <td >
+                            <td class="flex item-center justify-center">
                                 <img class="w-7 h-7 rounded-full" src="{{$user->photo ? $user->photo->path : "http://placehold.it/400" }}" alt="">
                             </td>
-                        <td class="text-xs ">{{$user->name}}</td>  
-                        <td class="text-xs ">{{$user->email}}</td>  
+                        <td class="text-xs text-center">{{$user->name}}</td>  
+                        <td class="text-xs text-center">{{$user->email}}</td>  
                         <td class="text-xs text-center">
                             <ul class="list-none">
                                 @foreach ($user->roles as $role)

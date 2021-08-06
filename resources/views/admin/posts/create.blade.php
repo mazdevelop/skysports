@@ -16,7 +16,7 @@
                 </div>
                 <div class="">
                     <label for="description" class="text-xs  focus:border-indigo-600  flex flex-row-reverse  ">توضیحات</label>
-                    <textarea  name="description" id="description" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600"></textarea>
+                    <textarea rows="8" dir="auto"   name="description" id="description" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600"></textarea>
                 </div>
                 <div class="">
                     <label for="first_photo" class="text-xs  focus:border-indigo-600  flex flex-row-reverse  ">تصویر اصلی</label>
@@ -38,11 +38,11 @@
                 </div>
                 <div class="">
                     <label for="meta_description" class="text-xs  focus:border-indigo-600  flex flex-row-reverse  ">متا توضیحات</label>
-                    <textarea  name="meta_description" id="meta_description" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600"></textarea>
+                    <textarea rows="8" dir="auto" name="meta_description" id="meta_description" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600"></textarea>
                 </div>
                 <div class="">
                     <label for="meta_keywords" class="text-xs  focus:border-indigo-600  flex flex-row-reverse  ">متا برچسب ها</label>
-                    <textarea  name="meta_keywords" id="meta_keywords" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600"></textarea>
+                    <textarea rows="8" dir="auto"  name="meta_keywords" id="meta_keywords" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600"></textarea>
                 </div>
                 <div class="">
                     <label for="status" class="text-xs my-3 flex flex-row-reverse">وضعیت</label>

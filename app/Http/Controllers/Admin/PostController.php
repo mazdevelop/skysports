@@ -74,17 +74,6 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -92,7 +81,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::with('category')->where('id',$id)->first();
+        $categories = Category::pluck('title','id');
+        return view('admin.posts.edit',compact(['post','categories']));
     }
 
     /**
@@ -104,7 +95,39 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        
+        if ($file = $request->file('photo_id')) {
+            if($post->photo_id !== NULL){
+                $photo = Photo::findOrFail($post->photo_id);
+                if (file_exists(public_path().$post->photo->path)) {
+                    unlink(public_path().$post->photo->path);
+                }
+            }
+            $name = time(). '-'.$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo = new Photo();
+            $photo->name=$file->getClientOriginalName();
+            $photo->path =$name;
+            $photo->user_id = Auth::id();
+            $photo->save();
+            $post->photo_id = $photo->id;
+        }
+        $post->title = $request->input('title');
+        if ($request->input('slug')) {
+            $post->slug = Str::makeSlug($request->input('slug'));
+        } else {
+            $post->slug = Str::makeSlug($request->input('title'));
+        }
+        
+        $post->description = $request->input('description');
+        $post->category_id = $request->input('category');
+        $post->meta_keywords = $request->input('meta_keywords');
+        $post->meta_description = $request->input('meta_description');
+        $post->status = $request->input('status');
+        $post->save();
+        Session::flash('update_post','پست  با موفقیت ویرایش شد');
+        return redirect('/admin/post');
     }
 
     /**
@@ -115,6 +138,17 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        
+        if($post->photo_id !== NULL){
+            $photo = Photo::findOrFail($post->photo_id);
+            if (file_exists(public_path().$post->photo->path)) {
+                unlink(public_path().$post->photo->path);
+            }
+        }    
+        $photo->delete();
+        $post->delete();
+        Session::flash('delete_post','پست  با موفقیت حذف شد');
+        return redirect('/admin/post');
     }
 }

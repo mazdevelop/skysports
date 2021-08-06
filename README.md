@@ -7,6 +7,7 @@ Sky Sports is a group of British subscription television sports channels operate
 
 ## Packages
 - [Laravel UI](https://github.com/laravel/ui)
+- [doctrine/dbal](https://github.com/doctrine/dbal)
 
 ## Requirements
 - PHP 7.3/8
