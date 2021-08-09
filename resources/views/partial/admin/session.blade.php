@@ -33,6 +33,20 @@
         </div>
     </div>
 @endif
+@if (Session::has('delete_photo'))
+    <div class="grid place-content-center h-16">
+        <div class="text-center text-red-500">
+            {{session('delete_photo')}}
+        </div>
+    </div>
+@endif
+@if (Session::has('add_photo'))
+    <div class="grid place-content-center h-14">
+        <div class="text-center text-green-500">
+            {{session('add_photo')}}
+        </div>
+    </div>
+@endif
 @if (Session::has('update_post'))
     <div class="grid place-content-center h-14">
         <div class="text-center text-green-500">

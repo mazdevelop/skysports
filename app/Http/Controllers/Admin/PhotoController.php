@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Photo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PhotoController extends Controller
 {
@@ -14,7 +17,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        $photos = Photo::with(['user'])->get();
+        return view('admin.photos.index',compact(['photos']));
     }
 
     /**
@@ -24,7 +28,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.photos.create');
     }
 
     /**
@@ -35,30 +39,15 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        if ($file = $request->file('file')) {
+            $name = time(). '-'.$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo = new Photo();
+            $photo->name=$file->getClientOriginalName();
+            $photo->path =$name;
+            $photo->user_id = Auth::id();
+            $photo->save();
+        }
     }
 
     /**
@@ -69,6 +58,16 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = Photo::findOrFail($id);
+        
+        if($photo->id !== NULL){
+            $photo = Photo::findOrFail($id);
+            if (file_exists(public_path().$photo->path)) {
+                unlink(public_path().$photo->path);
+            }
+        }    
+        $photo->delete();
+        Session::flash('delete_photo','عکس  با موفقیت حذف شد');
+        return redirect('/admin/photo');
     }
 }

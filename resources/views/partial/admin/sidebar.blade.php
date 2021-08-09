@@ -15,7 +15,7 @@
         </div>
         <!-- SIDEBAR MENU -->
         <ul class="list-none sidebar-menu">
-            <li><a href="#" class="active p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600"><i class="bx bx-home ml-3 text-2xl"></i><span class="text-sm">داشبورد</span></a></li>
+            <li><a href="{{ route('admin') }}" class="active p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600"><i class="bx bx-home ml-3 text-2xl"></i><span class="text-sm">داشبورد</span></a></li>
             <li><a href="#" class="p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600"><i class="bx bx-shopping-bag ml-3 text-2xl"></i><span class="text-sm">فروش</span></a></li>
             <li><a href="#" class="p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600"><i class="bx bx-chart ml-3 text-2xl"></i><span class="text-sm">آنالیز</span></a></li>
             <li class="sidebar-submenu">

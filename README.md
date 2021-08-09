@@ -19,7 +19,8 @@ Sky Sports is a group of British subscription television sports channels operate
 - [x] ~~CRUD User~~
 - [x] ~~CRUD Post~~
 - [x] ~~CRUD Category~~
-- [ ] Dropzone.js for file
+- [x] ~~Dropzone.js for file~~
+- [ ]  Pagination-and-Dashboard
 
 
 ## Credits
