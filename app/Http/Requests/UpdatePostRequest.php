@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class UpdatePostRequest extends FormRequest
 {
     protected function prepareForValidation()
     {
@@ -33,7 +34,7 @@ class PostRequest extends FormRequest
     {
         return [
             'title'=>'required|min:10',
-            'slug'=>'unique:posts',
+            'slug'=>Rule::unique('posts')->ignore(request()->post),
             'description'=>'required|min:8',
             'category'=>'nullable',
             'meta_keywords'=>'required',

@@ -31,13 +31,24 @@
             </li>
             <li class="sidebar-submenu">
                 <a class="relative sidebar-menu-dropdown p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600" href="#">
-                    <i class="bx bx-category ml-3 text-2xl"></i>
+                    <i class='bx bx-copy-alt ml-3 text-2xl'></i>
                     <span class="text-sm">پست ها</span>
                     <div class="dropdown-icon"></div>
                 </a>
                 <ul class="list-none sidebar-menu sidebar-menu-dropdown-content px-6">
                     <li><a href="{{ route('post.index') }}" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">فهرست</a></li>
                     <li><a href="{{ route('post.create') }}" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">ایجاد</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a class="relative sidebar-menu-dropdown p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600" href="#">
+                    <i class="bx bx-category ml-3 text-2xl"></i>
+                    <span class="text-sm">دسته بندی ها</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="list-none sidebar-menu sidebar-menu-dropdown-content px-6">
+                    <li><a href="{{ route('category.index') }}" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">فهرست</a></li>
+                    <li><a href="{{ route('category.create') }}" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">ایجاد</a></li>
                 </ul>
             </li>
             <li class="sidebar-submenu">

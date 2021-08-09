@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,6 @@ Route::group(['middleware'=>'admin'],function ()
 {
     Route::resource('admin/user',  UserController::class)->except(['show']);
     Route::resource('admin/post',  PostController::class)->except(['show']);
+    Route::resource('admin/category', CategoryController::class)->except(['show']);
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
