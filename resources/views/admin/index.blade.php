@@ -6,11 +6,11 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                total order
+                                مجموع سفارشات
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    6578
+                                    {{StrHelp::enToFa('6578')}}
                                 </div>
                                 <i class='bx bx-shopping-bag'></i>
                             </div>
@@ -23,11 +23,11 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                conversion rate
+                                نرخ تبدیل
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    30.5%
+                                    {{StrHelp::enToFa('30.5%') }}
                                 </div>
                                 <i class='bx bx-chat'></i>
                             </div>
@@ -40,11 +40,11 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                daily visitors
+                                بازدیدکنندگان روزانه
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    690
+                                    {{StrHelp::enToFa('690') }}
                                 </div>
                                 <i class='bx bx-user'></i>
                             </div>
@@ -57,11 +57,11 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                total profit
+                                مجموع سود
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    $9,780
+                                    {{StrHelp::enToFa('$9,780') }}
                                 </div>
                                 <i class='bx bx-line-chart'></i>
                             </div>
@@ -274,4 +274,7 @@
                 </div>
 
             </div>
+@endsection
+@section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 @endsection

@@ -9,6 +9,7 @@
     <!-- admin css -->
     <link rel="stylesheet" href="https://api.fontgraphy.ir/css?family=iraniansans">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    @yield('css')
 </head>
 
 <body>
@@ -30,7 +31,7 @@
     <!-- END MAIN CONTENT -->
     <div class="overlay"></div>
     <!-- apex charts -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    @yield('scripts')
     <!-- js script -->
     <script src="{{ asset('js/admin.js') }}"></script>
 </body>

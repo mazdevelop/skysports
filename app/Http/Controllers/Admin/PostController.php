@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\Str;
+use App\Helpers\StrHelp;
 use App\Models\Post;
 use App\Models\Photo;
 use App\Models\Category;
@@ -58,9 +58,9 @@ class PostController extends Controller
         }
         $post->title = $request->input('title');
         if ($request->input('slug')) {
-            $post->slug = Str::makeSlug($request->input('slug'));
+            $post->slug = StrHelp::makeSlug($request->input('slug'));
         } else {
-            $post->slug = Str::makeSlug($request->input('title'));
+            $post->slug = StrHelp::makeSlug($request->input('title'));
         }
         
         $post->description = $request->input('description');
@@ -116,9 +116,9 @@ class PostController extends Controller
         }
         $post->title = $request->input('title');
         if ($request->input('slug')) {
-            $post->slug = Str::makeSlug($request->input('slug'));
+            $post->slug = StrHelp::makeSlug($request->input('slug'));
         } else {
-            $post->slug = Str::makeSlug($request->input('title'));
+            $post->slug = StrHelp::makeSlug($request->input('title'));
         }
         
         $post->description = $request->input('description');

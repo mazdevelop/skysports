@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\Str;
+use App\Helpers\StrHelp;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,9 +43,9 @@ class CategoryController extends Controller
         $category = new Category();
         $category->title = $request->input('title');
         if ($request->input('slug')) {
-            $category->slug = Str::makeSlug($request->input('slug'));
+            $category->slug = StrHelp::makeSlug($request->input('slug'));
         } else {
-            $category->slug = Str::makeSlug($request->input('title'));
+            $category->slug = StrHelp::makeSlug($request->input('title'));
         }
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_description = $request->input('meta_description');
@@ -78,9 +78,9 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->title = $request->input('title');
         if ($request->input('slug')) {
-            $category->slug = Str::makeSlug($request->input('slug'));
+            $category->slug = StrHelp::makeSlug($request->input('slug'));
         } else {
-            $category->slug = Str::makeSlug($request->input('title'));
+            $category->slug = StrHelp::makeSlug($request->input('title'));
         }
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_description = $request->input('meta_description');

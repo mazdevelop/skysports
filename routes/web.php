@@ -23,8 +23,12 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['middleware'=>'admin'],function ()
 {
+    Route::get('admin/',  function () {
+        return view('admin.index');
+    });
     Route::resource('admin/user',  UserController::class)->except(['show']);
     Route::resource('admin/post',  PostController::class)->except(['show']);
     Route::resource('admin/category', CategoryController::class)->except(['show']);
+    Route::resource('admin/photo', PhotoController::class)->except(['show']);
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
