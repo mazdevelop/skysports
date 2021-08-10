@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category','user','photo')->get();
+        $posts = Post::with('category','user','photo')->paginate(5);
         return view('admin.posts.index',compact(['posts']));
     }
 

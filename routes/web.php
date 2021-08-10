@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['middleware'=>'admin'],function ()
 {
-    Route::get('admin/',  function () {
-        return view('admin.index');
-    })->name('admin');
+    Route::get('admin/', [ DashboardController::class ,'index'])->name('admin');
     Route::resource('admin/user',  UserController::class)->except(['show']);
     Route::resource('admin/post',  PostController::class)->except(['show']);
     Route::resource('admin/category', CategoryController::class)->except(['show']);

@@ -6,28 +6,11 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                مجموع سفارشات
+                                مجموع پست ها
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    {{StrHelp::enToFa('6578')}}
-                                </div>
-                                <i class='bx bx-shopping-bag'></i>
-                            </div>
-                        </div>
-                        <!-- END COUNTER -->
-                    </div>
-                </div>
-                <div class="w-full">
-                    <div class="box box-hover">
-                        <!-- COUNTER -->
-                        <div class="counter">
-                            <div class="counter-title">
-                                نرخ تبدیل
-                            </div>
-                            <div class="counter-info">
-                                <div class="counter-count">
-                                    {{StrHelp::enToFa('30.5%') }}
+                                    {{StrHelp::enToFa($postCount)}}
                                 </div>
                                 <i class='bx bx-chat'></i>
                             </div>
@@ -40,11 +23,11 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                بازدیدکنندگان روزانه
+                                تعداد کاربران
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    {{StrHelp::enToFa('690') }}
+                                    {{StrHelp::enToFa($userCount) }}
                                 </div>
                                 <i class='bx bx-user'></i>
                             </div>
@@ -57,13 +40,30 @@
                         <!-- COUNTER -->
                         <div class="counter">
                             <div class="counter-title">
-                                مجموع سود
+                                تعداد عکس ها
                             </div>
                             <div class="counter-info">
                                 <div class="counter-count">
-                                    {{StrHelp::enToFa('$9,780') }}
+                                    {{StrHelp::enToFa($photoCount) }}
                                 </div>
-                                <i class='bx bx-line-chart'></i>
+                                <i class='bx bx-photo-album'></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                مجموع دسته بندی ها
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    {{StrHelp::enToFa($categoryCount) }}
+                                </div>
+                                <i class='bx bx-category'></i>
                             </div>
                         </div>
                         <!-- END COUNTER -->
@@ -75,66 +75,28 @@
                     <!-- TOP PRODUCT -->
                     <div class="box f-height">
                         <div class="box-header">
-                            top product
+                            آخرین کاربران
                         </div>
                         <div class="box-body">
+                            
                             <ul class="product-list">
-                                <li class="product-list-item">
-                                    <div class="item-info">
-                                        <img src="https://images.unsplash.com/photo-1625320014712-cc333e4e93a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                            alt="">
-                                        <div class="item-name">
-                                            <div class="product-name">Jacket</div>
-                                            <div class="text-second">Cloths</div>
+                                @foreach ($users as $user)
+                                    <li class="product-list-item">
+                                        <div class="item-info">
+                                            <img src="{{$user->photo ? $user->photo->path : "http://placehold.it/400" }}"
+                                                alt="">
+                                            <div class="item-name">
+                                                <div class="product-name">{{$user->name}}</div>
+                                                <div class="text-second text-xs">{{$user->email}}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item-sale-info">
-                                        <div class="text-second">Sales</div>
-                                        <div class="product-sales">$5.930</div>
-                                    </div>
-                                </li>
-                                <li class="product-list-item">
-                                    <div class="item-info">
-                                        <img src="https://images.unsplash.com/photo-1625320014712-cc333e4e93a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                            alt="">
-                                        <div class="item-name">
-                                            <div class="product-name">Jacket</div>
-                                            <div class="text-second">Cloths</div>
+                                        <div class="item-sale-info">
+                                            <div class="text-second">ایجاد شده</div>
+                                            <div class="product-sales direction-rtl text-xs">{{ StrHelp::enToFa(\Hekmatinasser\Verta\Verta::instance($user->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran')))}}</div>
                                         </div>
-                                    </div>
-                                    <div class="item-sale-info">
-                                        <div class="text-second">Sales</div>
-                                        <div class="product-sales">$5.930</div>
-                                    </div>
-                                </li>
-                                <li class="product-list-item">
-                                    <div class="item-info">
-                                        <img src="https://images.unsplash.com/photo-1625320014712-cc333e4e93a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                            alt="">
-                                        <div class="item-name">
-                                            <div class="product-name">Jacket</div>
-                                            <div class="text-second">Cloths</div>
-                                        </div>
-                                    </div>
-                                    <div class="item-sale-info">
-                                        <div class="text-second">Sales</div>
-                                        <div class="product-sales">$5.930</div>
-                                    </div>
-                                </li>
-                                <li class="product-list-item">
-                                    <div class="item-info">
-                                        <img src="https://images.unsplash.com/photo-1625320014712-cc333e4e93a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                            alt="">
-                                        <div class="item-name">
-                                            <div class="product-name">Jacket</div>
-                                            <div class="text-second">Cloths</div>
-                                        </div>
-                                    </div>
-                                    <div class="item-sale-info">
-                                        <div class="text-second">Sales</div>
-                                        <div class="product-sales">$5.930</div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
+                                
                             </ul>
                         </div>
                     </div>
@@ -169,103 +131,25 @@
                     <!-- ORDERS TABLE -->
                     <div class="box">
                         <div class="box-header">Recent order</div>
-                        <div class="box-body overflow-scroll">
-                            <table>
-                                <thead>
+                        <div class="box-body overflow-scroll shadow  border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
                                     <tr>
-                                        <td>ID</td>
-                                        <td>Customer</td>
-                                        <td>Date</td>
-                                        <td>Order status</td>
-                                        <td>Payment status</td>
-                                        <td>Total</td>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">شناسه</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">عنوان دسته بندی</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">تاریخ ایجاد</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($categories as $category)
                                     <tr>
-                                        <td>#2345</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="https://images.unsplash.com/photo-1606787364406-a3cdf06c6d0c?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                                                    alt="">
-                                                <span>Maz dev</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-ready">Ready</span>
-                                        </td>
-                                        <td>
-                                            <span class="payment-status payment-pending">
-                                                <div class="dot"></div>
-                                                <span>Pending</span>
-                                            </span>
-                                        </td>
-                                        <td>$123.45</td>
+                                            <td class="px-2 text-xs">{{StrHelp::enToFa($category->id)}}</td>
+                                            <td class="px-2 text-xs">{{$category->title}}</td>
+                                            <td class="text-xs direction-rtl text-center">
+                                                {{ StrHelp::enToFa(\Hekmatinasser\Verta\Verta::instance($category->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran')))}}
+                                            </td>
                                     </tr>
-                                    <tr>
-                                        <td>#2345</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="https://images.unsplash.com/photo-1606787364406-a3cdf06c6d0c?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                                                    alt="">
-                                                <span>Maz dev</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-shipped">Shipped</span>
-                                        </td>
-                                        <td>
-                                            <span class="payment-status payment-paid">
-                                                <div class="dot"></div>
-                                                <span>Paid</span>
-                                            </span>
-                                        </td>
-                                        <td>$123.45</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#2345</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="https://images.unsplash.com/photo-1606787364406-a3cdf06c6d0c?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                                                    alt="">
-                                                <span>Maz dev</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-ready">Ready</span>
-                                        </td>
-                                        <td>
-                                            <span class="payment-status payment-pending">
-                                                <div class="dot"></div>
-                                                <span>Pending</span>
-                                            </span>
-                                        </td>
-                                        <td>$123.45</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#2345</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="https://images.unsplash.com/photo-1606787364406-a3cdf06c6d0c?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                                                    alt="">
-                                                <span>Maz dev</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-shipped">Shipped</span>
-                                        </td>
-                                        <td>
-                                            <span class="payment-status payment-paid">
-                                                <div class="dot"></div>
-                                                <span>Paid</span>
-                                            </span>
-                                        </td>
-                                        <td>$123.45</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

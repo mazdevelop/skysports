@@ -32,5 +32,8 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="flex items-center justify-center my-4">
+            {{$photos->links('partial.pagination.custom')}}
+        </div>
     </div>
 @endsection
