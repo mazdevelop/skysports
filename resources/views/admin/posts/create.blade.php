@@ -8,11 +8,11 @@
             @csrf
                 <div class="">
                     <label for="title" class="text-xs focus:border-indigo-600  flex flex-row-reverse  ">عنوان پست</label>
-                    <input type="text" name="title" id="title" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600">
+                    <input type="text" name="title" id="title" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600" dir="auto">
                 </div>
                 <div class="">
                     <label for="slug" class="text-xs focus:border-indigo-600  flex flex-row-reverse  ">نام مستعار</label>
-                    <input type="text" name="slug" id="slug" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600">
+                    <input type="text" name="slug" id="slug" class="w-full py-3 shadow-md border-gray-400 rounded-md my-3 focus:border-indigo-600" dir="auto">
                 </div>
                 <div class="">
                     <label for="description" class="text-xs  focus:border-indigo-600  flex flex-row-reverse  ">توضیحات</label>
@@ -47,8 +47,8 @@
                 <div class="">
                     <label for="status" class="text-xs my-3 flex flex-row-reverse">وضعیت</label>
                     <select name="status" class="border-gray-300 text-xs  grid place-items-center rounded w-3/4" id="status">
-                        <option value="0" class="place-self-center">فعال</option>
-                        <option value="1" class="place-self-center" selected>غیر فعال</option>
+                        <option value="1" class="place-self-center">فعال</option>
+                        <option value="0" class="place-self-center" selected>غیر فعال</option>
                     </select>
                 </div>
                 <div class="w-full grid place-items-center my-8">

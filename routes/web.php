@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Front\MainController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -18,9 +19,8 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ MainController::class ,'index']);
+Route::get('/posts/{slug}', [ MainController::class ,'show'])->name('front.post.show');
 
 Auth::routes();
 Route::group(['middleware'=>'admin'],function ()

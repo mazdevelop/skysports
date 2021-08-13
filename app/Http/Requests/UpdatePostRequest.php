@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\StrHelp;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -10,9 +11,9 @@ class UpdatePostRequest extends FormRequest
     protected function prepareForValidation()
     {
         if ($this->input('slug')) {
-            $this->merge(['slug'=> Str::makeSlug($this->input('slug'))]) ;
+            $this->merge(['slug'=> StrHelp::makeSlug($this->input('slug'))]) ;
         } else {
-            $this->merge(['slug'=> Str::makeSlug($this->input('title'))]) ;
+            $this->merge(['slug'=> StrHelp::makeSlug($this->input('title'))]) ;
         }
     }
     /**

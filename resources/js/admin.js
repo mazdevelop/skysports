@@ -12,7 +12,6 @@ document.querySelectorAll('.sidebar-submenu').forEach(e => {
         dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
     }
 });
-
 // MENU TOGGLE
 let overlay = document.querySelector('.overlay');
 let sidebar = document.querySelector('.sidebar');

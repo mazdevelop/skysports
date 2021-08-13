@@ -13,7 +13,7 @@
 </head>
 
 <body>
- @include('partial.admin.sidebar')
+    @include('partial.admin.sidebar')
     <!-- MAIN CONTENT -->
     <section class="main">
         <div class="main-header">
