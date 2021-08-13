@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./art/varzesh3.png width="400">
+<img src="./art/varzesh3.png" width="400">
 </p>
 
 ## About Varzesh 3
