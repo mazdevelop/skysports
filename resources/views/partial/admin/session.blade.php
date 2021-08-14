@@ -12,6 +12,7 @@
         </div>
     </div>
 @endif
+
 @if (Session::has('delete_post'))
     <div class="grid place-content-center h-16">
         <div class="text-center text-red-500">
@@ -51,6 +52,20 @@
     <div class="grid place-content-center h-14">
         <div class="text-center text-green-500">
             {{session('update_post')}}
+        </div>
+    </div>
+@endif
+@if (Session::has('delete_comment'))
+    <div class="grid place-content-center h-16">
+        <div class="text-center text-red-500">
+            {{session('delete_comment')}}
+        </div>
+    </div>
+@endif
+@if (Session::has('update_comment'))
+    <div class="grid place-content-center h-14">
+        <div class="text-center text-green-500">
+            {{session('update_comment')}}
         </div>
     </div>
 @endif

@@ -20,7 +20,13 @@ class MainController extends Controller
     }
     public function show($slug)
     {
-        $post = Post::where('slug',$slug)->first();
+        $post = Post::with(['comments'=> function($q)
+        {
+            
+            $q->where('parent_id',null)
+            ->where('status','1');
+
+        }])->where('slug',$slug)->first();
         return view('frontend.posts.show',compact(['post']));
     }
 }

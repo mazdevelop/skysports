@@ -15,7 +15,7 @@
         </div>
         <!-- SIDEBAR MENU -->
         <ul class="list-none sidebar-menu">
-            <li><a href="{{ route('admin') }}" class="active p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600"><i class="bx bx-home ml-3 text-2xl"></i><span class="text-sm">داشبورد</span></a></li>
+            <li><a href="{{ route('admin') }}" class="p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600"><i class="bx bx-home ml-3 text-2xl"></i><span class="text-sm">داشبورد</span></a></li>
             <li class="sidebar-submenu">
                 <a class="relative sidebar-menu-dropdown p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600" href="#">
                     <i class="bx bx-user-circle ml-3 text-2xl"></i>
@@ -60,17 +60,11 @@
                     <li><a href="{{ route('photo.create') }}" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">ایجاد</a></li>
                 </ul>
             </li>
-            <li class="sidebar-submenu">
-                <a class="relative sidebar-menu-dropdown p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600" href="#">
-                    <i class='bx bxl-product-hunt ml-3 text-2xl'></i>
-                    <span class="text-sm">فروشگاه</span>
-                    <div class=" dropdown-icon"></div>
+            <li>
+                <a href="{{ route('comment.index') }}" class="p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">
+                    <i class="bx bx-comment ml-3 text-2xl"></i>
+                    <span class="text-sm">نظرات</span>
                 </a>
-                <ul class="list-none sidebar-menu  sidebar-menu-dropdown-content px-6">
-                    <li><a href="#" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">لیست محصولات</a></li>
-                    <li><a href="#" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">اضافه کردن</a></li>
-                    <li><a href="#" class="text-xs p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600">صفارشات</a></li>
-                </ul>
             </li>
             <li class="sidebar-submenu">
                 <a class="relative sidebar-menu-dropdown p-4 w-full h-11 flex items-center flex-row-reverse transition-colors duration-500 ease-in-out hover:text-blue-600" href="#">
