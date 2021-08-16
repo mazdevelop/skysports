@@ -22,11 +22,13 @@
                         <td class="text-xs text-center">{{$photo->user->name}}</td>  
                         <td class="text-xs text-center direction-rtl">{{ \Hekmatinasser\Verta\Verta::instance($photo->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran'))}}</td>  
                         <td class="text-center direction-rtl">
-                            <form action="{{ route('photo.destroy', $photo->id) }}"  method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
-                            </form>
+                            <div class="flex items-center justify-center rounded-md border-2 p-1 border-green-800">
+                                <form action="{{ route('photo.destroy', $photo->id) }}"  method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
+                                </form>
+                            </div>
                         </td>  
                     </tr>
                 @endforeach

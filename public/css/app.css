@@ -325,7 +325,7 @@ a{
 }
 .footer-div-1 div:last-child .bx{
     color: var(--red);
-    margin-right: 1.4rem;
+    margin-left: 1.4rem;
 }
 .footer-div-2 .form-group input[type="text"]{
     background-color: var(--black);

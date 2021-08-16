@@ -40,13 +40,15 @@
                             @else
                                 <td class="text-xs text-center text-green-600 ">منتشر شده</td>
                             @endif  
-                            <td class="flex items-center justify-between rounded-md ">
-                                <a href="{{ route( 'comment.edit', $comment->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
-                                <form action="{{ route('comment.destroy', $comment->id) }}"  method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
-                                </form>
+                            <td>
+                                <div class="flex items-center justify-around rounded-md border-2 p-1 border-green-800">
+                                    <a href="{{ route( 'comment.edit', $comment->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
+                                    <form action="{{ route('comment.destroy', $comment->id) }}"  method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
+                                    </form>
+                                </div>
                             </td>  
                         </tr>
                     @endforeach

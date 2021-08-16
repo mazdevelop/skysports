@@ -32,12 +32,14 @@
                         <td class="text-xs text-center @if($user->status == "فعال") text-green-400 @else text-red-400 @endif ">{{ $user->status }}</td>  
                         <td class="text-xs text-center direction-rtl">{{ \Hekmatinasser\Verta\Verta::instance($user->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran'))}}</td>  
                         <td class="">
-                            <a href="{{ route( 'user.edit', $user->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
-                            <form action="{{ route('user.destroy', $user->id) }}"  method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
-                            </form>
+                            <div class="flex items-center justify-around rounded-md border-2 p-1 border-green-800">
+                                <a href="{{ route( 'user.edit', $user->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
+                                <form action="{{ route('user.destroy', $user->id) }}"  method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
+                                </form>
+                            </div>
                         </td>  
                     </tr>
                 @endforeach

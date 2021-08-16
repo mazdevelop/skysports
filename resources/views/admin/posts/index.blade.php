@@ -32,7 +32,7 @@
                         <td class="text-xs text-center direction-rtl">{{ \Hekmatinasser\Verta\Verta::instance($post->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran'))}}</td>  
                         <td class="text-xs text-center direction-rtl">{{ \Hekmatinasser\Verta\Verta::instance($post->updated_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran'))}}</td>  
                         <td >
-                            <div class="flex items-center justify-around">
+                            <div class="flex items-center justify-around rounded-md border-2 p-1 border-green-800">
                                 <a href="{{ route( 'post.edit', $post->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
                                 <form action="{{ route('post.destroy', $post->id) }}"  method="POST">
                                     @csrf
