@@ -33,9 +33,14 @@ The MIT License [MIT license](https://opensource.org/licenses/MIT). Please see L
 
 ## Screenshots
 -Admin dashboard
+
 ![screenshot 1](art/admin-dashboard.png)
+
 -Admin user
+
 ![screenshot 2](art/admin-user.png)
+
 -Front
+
 ![screenshot 3](art/dekstop.png)
 
