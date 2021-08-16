@@ -7,9 +7,7 @@
                 <tr class="text-xs font-thin text-center text-white rounded-md bg-gray-500 w-full">
                     <th>عکس</th>
                     <th>عنوان</th>
-                    <th>کاربر</th>
                     <th>توضیحات</th>
-                    <th>دسته بندی</th>
                     <th>وضعیت</th>
                     <th>تاریخ ایجاد</th>
                     <th>تاریخ بروزرسانی</th>
@@ -20,7 +18,7 @@
                 @foreach ($posts as $post)
                     <tr class="px-4 hover:text-blue-600 cursor-pointer transition-colors duration-500 ease-in-out">
                             <td >
-                                <img class="w-7 h-7 rounded-full" src="{{$post->photo ? $post->photo->path : "http://placehold.it/400" }}" alt="">
+                                <img class="w-10 h-10 rounded-full" src="{{$post->photo ? $post->photo->path : "http://placehold.it/400" }}" alt="">
                             </td>
                         <td class="text-xs text-center">{{$post->title}}</td>  
                         <td class="text-xs text-center">{{$post->user->name}}</td>  

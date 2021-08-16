@@ -20,19 +20,28 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', [ MainController::class ,'index']);
-Route::get('/posts/{slug}', [ MainController::class ,'show'])->name('front.post.show');
-Route::post('/comment/{id}', [ App\Http\Controllers\Front\CommentController::class ,'store'])->name('front.comment.store');
-Route::post('/comment', [ App\Http\Controllers\Front\CommentController::class ,'reply'])->name('front.comment.reply');
+Route::group(['prefix'=>'/'],function ()
+{
+    Route::get('', [ MainController::class ,'index']);
+    Route::get('posts/{slug}', [ MainController::class ,'show'])->name('front.post.show');
+    Route::post('comment/{id}', [ App\Http\Controllers\Front\CommentController::class ,'store'])->name('front.comment.store');
+    Route::post('comment', [ App\Http\Controllers\Front\CommentController::class ,'reply'])->name('front.comment.reply');    
+});
+
+
 
 Auth::routes();
-Route::group(['middleware'=>'admin'],function ()
+
+Route::group(['middleware'=>'admin','prefix'=>'admin/'],function ()
 {
-    Route::get('admin/', [ DashboardController::class ,'index'])->name('admin');
-    Route::resource('admin/user',  UserController::class)->except(['show']);
-    Route::resource('admin/post',  PostController::class)->except(['show']);
-    Route::resource('admin/category', CategoryController::class)->except(['show']);
-    Route::resource('admin/photo', PhotoController::class)->except(['show']);
-    Route::resource('admin/comment', CommentController::class)->except(['show','create','store']);
+
+    Route::get('', [ DashboardController::class ,'index'])->name('admin');
+    Route::resource('user',  UserController::class)->except(['show']);
+    Route::resource('post',  PostController::class)->except(['show']);
+    Route::resource('category', CategoryController::class)->except(['show']);
+    Route::resource('photo', PhotoController::class)->except(['show']);
+    Route::resource('comment', CommentController::class)->except(['show','create','store']);
+    Route::delete('delete/comment', [CommentController::class , 'deleteAll'])->name('comment.delete.all');
+
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

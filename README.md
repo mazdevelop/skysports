@@ -22,7 +22,7 @@ Varzesh 3 is a group of British subscription television sports channels operated
 - [x] ~~Dropzone.js for file~~
 - [x] ~~Pagination and Dashboard~~
 - [x] ~~Frontend & SeoFriendly Url~~
-- [ ] Comment 
+- [x] ~~Comment~~ 
 
 
 ## Credits

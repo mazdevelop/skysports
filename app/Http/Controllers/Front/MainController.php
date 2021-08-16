@@ -29,4 +29,5 @@ class MainController extends Controller
         }])->where('slug',$slug)->first();
         return view('frontend.posts.show',compact(['post']));
     }
+
 }

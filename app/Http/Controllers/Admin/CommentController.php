@@ -60,7 +60,17 @@ class CommentController extends Controller
     {
         $comment = Comment::findOrFail($id);
         $comment->delete();
-        Session::flash('delete_post','نظر  با موفقیت حذف شد');
+        Session::flash('delete_comment','نظر  با موفقیت حذف شد');
+        return redirect('/admin/comment');
+    }
+
+    public function deleteAll(Request $request)
+    {
+        $comments =Comment::find($request->checkBoxArray);
+        foreach ($comments as $comment) {
+            $comment->delete();
+        }
+        Session::flash('delete_comment','نظر  با موفقیت حذف شد');
         return redirect('/admin/comment');
     }
 }
