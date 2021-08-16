@@ -38,5 +38,4 @@ The MIT License [MIT license](https://opensource.org/licenses/MIT). Please see L
 ![screenshot 2](art/admin-panel.png)
 -Front
 ![screenshot 3](art/dekstop.png)
--Front mobile
-![screenshot 4](art/medium.png)
+
