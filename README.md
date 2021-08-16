@@ -23,7 +23,7 @@ Varzesh 3 is a group of British subscription television sports channels operated
 - [x] ~~Pagination and Dashboard~~
 - [x] ~~Frontend & SeoFriendly Url~~
 - [x] ~~Comment~~ 
-
+- [x] ~~Bulk selecting of checkboxes per table using javascript & Laravel~~
 
 ## Credits
 - All Contributors
