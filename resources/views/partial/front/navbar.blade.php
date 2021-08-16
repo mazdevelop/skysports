@@ -10,10 +10,10 @@
             </div>
         </div>
         <ul class="nav-menu">
-            <li><a href="#">home</a></li>
-            <li><a href="#">archive</a></li>
-            <li><a href="#">category</a></li>
-            <li><a href="#">contact</a></li>
+            <li><a href="#">خانه</a></li>
+            <li><a href="#">آرشیو</a></li>
+            <li><a href="#">دسته بندی ها</a></li>
+            <li><a href="#">تماس</a></li>
         </ul>
         <ul class="social-icons">
             <li><i class='bx bxl-instagram' ></i></li>

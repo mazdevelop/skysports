@@ -32,4 +32,11 @@ Varzesh 3 is a group of British subscription television sports channels operated
 The MIT License [MIT license](https://opensource.org/licenses/MIT). Please see License File for more information.
 
 ## Screenshots
-![screenshot 1](art/admin-panel.png)
+-Admin dashboard
+![screenshot 1](art/admin-dashboard.png)
+-Admin user
+![screenshot 2](art/admin-panel.png)
+-Front
+![screenshot 3](art/dekstop.png)
+-Front mobile
+![screenshot 4](art/medium.png)
