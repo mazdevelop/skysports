@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    @include('partial.admin.errors')
+    @include('partial.form.errors')
     <div class="container my-2">
        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div class="flex items-center justify-center">

@@ -7,7 +7,9 @@
                 <tr class="text-xs font-thin text-center text-white rounded-md bg-gray-500 w-full">
                     <th>عکس</th>
                     <th>عنوان</th>
+                    <th>کاربر</th>
                     <th>توضیحات</th>
+                    <th>دسته بندی</th>
                     <th>وضعیت</th>
                     <th>تاریخ ایجاد</th>
                     <th>تاریخ بروزرسانی</th>
@@ -29,13 +31,15 @@
                         </td>  
                         <td class="text-xs text-center direction-rtl">{{ \Hekmatinasser\Verta\Verta::instance($post->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran'))}}</td>  
                         <td class="text-xs text-center direction-rtl">{{ \Hekmatinasser\Verta\Verta::instance($post->updated_at)->formatDifference(\Hekmatinasser\Verta\Verta::today('Asia/Tehran'))}}</td>  
-                        <td class="">
-                            <a href="{{ route( 'post.edit', $post->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
-                            <form action="{{ route('post.destroy', $post->id) }}"  method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
-                            </form>
+                        <td >
+                            <div class="flex items-center justify-around">
+                                <a href="{{ route( 'post.edit', $post->id ) }}" class="text-xs text-yellow-600 mx-1">Edit</a>
+                                <form action="{{ route('post.destroy', $post->id) }}"  method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"  class="text-xs text-red-600 mx-1">Delete</button>
+                                </form>
+                            </div>
                         </td>  
                     </tr>
                 @endforeach

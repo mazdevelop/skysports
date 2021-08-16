@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    @include('partial.admin.errors')
+    @include('partial.form.errors')
     <div class="container my-2">
         <div class="">
             <h1 class="text-2xl flex flex-row-reverse my-4">ویرایش کاربر</h1>
